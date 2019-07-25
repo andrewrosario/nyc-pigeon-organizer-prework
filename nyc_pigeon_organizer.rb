@@ -12,8 +12,8 @@ def nyc_pigeon_organizer(data)
     end
   end
   
-  data.each do |characteristic, category|
-    category.each do |type, names|
+  data.map do |characteristic, category|
+    category.map do |type, names|
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
           puts names
