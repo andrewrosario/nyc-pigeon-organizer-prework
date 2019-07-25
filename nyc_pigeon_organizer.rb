@@ -9,6 +9,11 @@ def nyc_pigeon_organizer(data)
       pigeon_names = pigeon_names.flatten.uniq
       pigeon_characteristics << characteristic
       pigeon_characteristics = pigeon_characteristics.uniq
+    end
+  end
+  
+  data.each do |characteristic, category|
+    category.each do |type, names|
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
           puts names
@@ -18,6 +23,8 @@ def nyc_pigeon_organizer(data)
         end
       end
     end
-  end
-  puts pigeon_list
+  end  
+  
+  pigeon_list 
+  
 end
