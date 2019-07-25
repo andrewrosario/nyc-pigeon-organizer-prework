@@ -13,6 +13,7 @@ def nyc_pigeon_organizer(data)
         pigeon_characteristics.each do |char|
           if names.include?(nam)
             pigeon_list[nam] = char
+            pigeon_list[nam][char] = type
           end
         end
       end
