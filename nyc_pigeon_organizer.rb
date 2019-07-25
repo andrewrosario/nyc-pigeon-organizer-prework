@@ -9,21 +9,26 @@ def nyc_pigeon_organizer(data)
       pigeon_names = pigeon_names.flatten.uniq
       pigeon_characteristics << characteristic
       pigeon_characteristics = pigeon_characteristics.uniq
+                if names.include?(nam)
+            pigeon_list[nam] = {char => type}
+          end
+      
+      
     end
   end
   
-  data.map do |characteristic, category|
-    category.map do |type, names|
-      pigeon_names.each do |nam|
-        pigeon_characteristics.each do |char|
-          puts names
-          if names.include?(nam)
-            pigeon_list[nam] = {char => type}
-          end
-        end
-      end
-    end
-  end  
+  # data.map do |characteristic, category|
+  #   category.map do |type, names|
+  #     pigeon_names.each do |nam|
+  #       pigeon_characteristics.each do |char|
+  #         puts names
+  #         if names.include?(nam)
+  #           pigeon_list[nam] = {char => type}
+  #         end
+  #       end
+  #     end
+  #   end
+  # end  
   
   pigeon_list 
   
