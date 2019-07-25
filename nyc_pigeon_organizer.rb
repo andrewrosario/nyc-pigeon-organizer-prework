@@ -12,7 +12,7 @@ def nyc_pigeon_organizer(data)
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
           if names.include?(nam)
-            puts "hgey"
+            pigeon_list[name] = char
           end
         end
       end
