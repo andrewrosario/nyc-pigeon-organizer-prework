@@ -11,7 +11,7 @@ def nyc_pigeon_organizer(data)
       pigeon_characteristics = pigeon_characteristics.uniq
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
-          if names.includes?(nam)
+          if names.include?(nam)
             pigeon_list[nam][char] = type
           end
         end
