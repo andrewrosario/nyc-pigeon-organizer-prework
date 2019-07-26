@@ -26,6 +26,7 @@ def nyc_pigeon_organizer(data)
               pigeon_list[nam][char] = [type.to_s]
             else
               puts "cow"
+              pigeon_list[nam][char] << [type.to_s]
             end          
         end
       end
