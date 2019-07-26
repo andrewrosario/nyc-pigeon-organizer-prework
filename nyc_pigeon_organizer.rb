@@ -24,7 +24,6 @@ def nyc_pigeon_organizer(data)
             elsif names.include?(nam) && pigeon_list.key?(nam)
               pigeon_list[nam][char] = type
             else
-              
               puts "cow"
             end          
         end
