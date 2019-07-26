@@ -28,7 +28,7 @@ def nyc_pigeon_organizer(data)
               pigeon_list[nam][char] = [type.to_s]
             elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class == Array
               puts "cow"
-              pigeon_list[nam][char] << [type.to_s]
+              pigeon_list[nam][char] << type.to_s
             end          
         end
       end
