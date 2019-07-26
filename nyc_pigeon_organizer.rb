@@ -22,11 +22,11 @@ def nyc_pigeon_organizer(data)
           # puts characteristic
             if names.include?(nam) && !pigeon_list.key?(nam) && char == characteristic
               pigeon_list[nam] = {char => [type.to_s]}
-            elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic
+            elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class != Array
               puts pigeon_list[nam][char]
               puts pigeon_list[nam][char].class
               pigeon_list[nam][char] = [type.to_s]
-            else
+            elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class == Array
               puts "cow"
               pigeon_list[nam][char] << [type.to_s]
             end          
