@@ -19,7 +19,11 @@ def nyc_pigeon_organizer(data)
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
           puts names
-          
+            if names.include?(nam) && !pigeon_list[nam][char]
+              pigeon_list[nam] = {char => type}
+            else
+              pigeon_list[nam][char] = type
+            end          
   
   
   
