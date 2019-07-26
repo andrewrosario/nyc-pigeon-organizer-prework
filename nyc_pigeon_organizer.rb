@@ -9,9 +9,11 @@ def nyc_pigeon_organizer(data)
       pigeon_names = pigeon_names.flatten.uniq
       pigeon_characteristics << characteristic
       pigeon_characteristics = pigeon_characteristics.uniq
-                if names.include?(nam)
-            pigeon_list[nam] = {char => type}
-          end
+        if names.include?(nam) && !pigeon_list[nam][char]
+          pigeon_list[nam] = {char => type}
+        else
+          pigeon_list[nam][char] = type
+        end
       
       
     end
