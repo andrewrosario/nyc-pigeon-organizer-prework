@@ -18,10 +18,11 @@ def nyc_pigeon_organizer(data)
     category.map do |type, names|
       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
-          puts names
-            if names.include?(nam) && !pigeon_list.key?(nam) && char == category
+          puts char
+          puts category
+            if names.include?(nam) && !pigeon_list.key?(nam) 
               pigeon_list[nam] = {char => type}
-            elsif names.include?(nam) && pigeon_list.key?(nam) && char == category
+            elsif names.include?(nam) && pigeon_list.key?(nam) 
               pigeon_list[nam][char] = type
             else
               puts "cow"
