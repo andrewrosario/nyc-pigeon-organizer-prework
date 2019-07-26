@@ -9,31 +9,40 @@ def nyc_pigeon_organizer(data)
       pigeon_names = pigeon_names.flatten.uniq
       pigeon_characteristics << characteristic
       pigeon_characteristics = pigeon_characteristics.uniq
-
-    
-    end
-  end
-  
-  data.map do |characteristic, category|
-    category.map do |type, names|
-      pigeon_names.each do |nam|
+       pigeon_names.each do |nam|
         pigeon_characteristics.each do |char|
           # puts char
           # puts characteristic
             if names.include?(nam) && !pigeon_list.key?(nam) && char == characteristic
               pigeon_list[nam] = {char => [type.to_s]}
             elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class != Array
-              puts pigeon_list[nam][char]
-              puts pigeon_list[nam][char].class
               pigeon_list[nam][char] = [type.to_s]
             elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class == Array
-              puts "cow"
               pigeon_list[nam][char] << type.to_s
             end          
         end
       end
+    
     end
-  end  
+  end
+  
+  # data.map do |characteristic, category|
+  #   category.map do |type, names|
+  #     pigeon_names.each do |nam|
+  #       pigeon_characteristics.each do |char|
+  #         # puts char
+  #         # puts characteristic
+  #           if names.include?(nam) && !pigeon_list.key?(nam) && char == characteristic
+  #             pigeon_list[nam] = {char => [type.to_s]}
+  #           elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class != Array
+  #             pigeon_list[nam][char] = [type.to_s]
+  #           elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic && pigeon_list[nam][char].class == Array
+  #             pigeon_list[nam][char] << type.to_s
+  #           end          
+  #       end
+  #     end
+  #   end
+  # end  
   
   pigeon_list 
   
