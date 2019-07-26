@@ -21,9 +21,9 @@ def nyc_pigeon_organizer(data)
           # puts char
           # puts characteristic
             if names.include?(nam) && !pigeon_list.key?(nam) && char == characteristic
-              pigeon_list[nam] = {char => type}
+              pigeon_list[nam] = {char => [type]}
             elsif names.include?(nam) && pigeon_list.key?(nam) && char == characteristic
-              pigeon_list[nam][char] = type
+              pigeon_list[nam][char] = [type]
             else
               puts "cow"
             end          
